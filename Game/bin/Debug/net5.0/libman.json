@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@4.6.0",
+      "destination": "wwwroot/bootstrap/"
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "popper.js@2.11.0",
+      "destination": "wwwroot/popper.js/",
+      "files": [
+        "umd/popper.min.js"
+      ]
+    },
+    {
+      "library": "axios@0.24.0",
+      "destination": "wwwroot/axios/"
+    }
+  ]
+}

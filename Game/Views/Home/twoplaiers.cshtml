@@ -1,0 +1,82 @@
+﻿@model Game.Models.DataBase.Player
+@{
+    ViewData["Title"] = "twoplayers";
+}
+
+<h1>Two Players</h1>
+
+
+
+<div class="currentPlayer  ">
+    The current player is
+    <span class="player"></span>
+    <br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+
+                <img src="~/css/t.png" class="img-fluid" id="t-img" />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div>
+
+                <img src="~/css/o.png" id="o-img" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container1 ">
+    <div class="player1">
+        <h3>Player 1</h3>
+        O's remaining: <span class="o-s">6</span> <br />
+        T's remaining: <span class="t-s">6</span>
+    </div>
+
+    <div class="board"></div>
+    <div class="player2">
+        <h3></h3>
+        O's remaining: <span class="o-s">6</span> <br />
+        T's remaining: <span class="t-s">6</span>
+    </div>
+
+    <div class="restart">
+        <div class="mmm1">
+            <h2></h2>
+        </div>
+        <form asp-action="addWinner2Players">
+            <input asp-for="Name" id="winnerName" hidden />
+
+            <input asp-for="Player2Name" id="loserName" hidden />
+            <input type="submit" class="playAgain btn  btn-info" value="Play Agian" />
+        </form>
+
+
+    </div>
+
+
+</div>
+<!-- <button onclick="mm()"></button> -->
+@section Scripts{
+
+    <script src="~/axios/axios.js"></script>
+
+    <script src="~/js/twoplayers.js"></script>
+
+    <script>
+        let player1Name = localStorage.getItem("player1Name");
+        console.log(player1Name);
+        let player2Name = localStorage.getItem("player2Name");
+        document.querySelector(".player2 h3").innerHTML = player2Name;
+        document.querySelector(".player1 h3").innerHTML = player1Name;
+
+    </script>
+}
+
+
+

@@ -1,0 +1,93 @@
+﻿@model Game.Models.DataBase.Player
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Sign In</title>
+    <!-- Favicon-->
+    <!-- Google Fonts -->
+    <link href="~/css/css.css" rel="stylesheet" />
+    <link href="~/css/icon.css" rel="stylesheet" />
+
+    <!-- Bootstrap Core Css -->
+
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+
+    <!-- Custom Css -->
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    @*<link href="~/css/style.css" rel="stylesheet">*@
+</head>
+
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">TOOT vs OTTO<b>Game</b></a>
+
+        </div>
+        
+        <div class="card">
+            <div class="body">
+                <form asp-action="login2">
+
+
+
+
+                    <div class="msg">Sign in to start your session</div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="moo" asp-for="Name" placeholder="Name" autofocus>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                            <input type="submit" onclick="makeSession()" value="Start the game" class="btn btn-block bg-pink waves-effect" />
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Jquery Core Js -->
+        <script src="~/jquery/jquery.min.js"></script>
+
+        <script src="~/bootstrap/js/bootstrap.js"></script>
+        <script src="~/axios/axios.js"></script>
+        <!-- Bootstrap Core Js -->
+        <script>
+
+            function makeSession() {
+                const val = document.querySelector('#moo').value;
+
+                localStorage.setItem("player2Name", val)
+            }
+            function makeSession1() {
+                console.log(name);
+            }
+
+        </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Game.Models.DataBase.Player>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section bootstrapSelect{
+
+    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+}
+<div class="alert alert-primary" role="alert">
+    <h3> The Heighest Score @ViewBag.z</h3>    
+</div>
+<div class="alert alert-success" role="alert">
+    <h3>Player With The Heighest Score @ViewBag.t</h3>    
+</div>
+<div class="alert alert-info" role="alert">
+    <h3>Players Won with OTTO @ViewBag.y times</h3>
+</div>
+<div class="alert alert-info" role="alert">
+    <h3>Players Won with TOOT @ViewBag.x times</h3>
+</div>
+<div class="alert alert-info" role="alert">
+    <h3> The Lowest Score @ViewBag.lowest</h3>
+</div>
+<div class="alert alert-danger " role="alert">
+    <h3>Player With The Lowest Score @ViewBag.loser</h3>
+</div>
+
+<div class="body">
+    <div class="table-responsive">
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Times of Winning</th>
+                    <th>Last Winning Move</th>
+                    <th>Number OF Winning OTTO</th>
+                    <th>Number OF Winning TOOT</th>
+                    <th>Number OF Games</th>
+                    <th>Number OF Losses</th>
+                </tr>
+            </thead>
+            <tbody id="mooo">
+                @foreach (var item in Model)
+                {
+
+                <tr>
+
+                    <td>@item.Name</td>
+                    <td>@item.TimesOfWinning</td>
+                    <td>@item.LastWinningMove</td>
+                    <td>@item.OttoNumber</td>
+                    <td>@item.TootNumber</td>
+                    <td>@item.NumberOfGames</td>
+                    <td>@item.NumberOfLosses</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+}
+
+
+
+
